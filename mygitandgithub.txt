@@ -1,0 +1,109 @@
+Hello everyone,
+
+Today i want to share my learning progress today i had learnt the Git and GitHub 
+Before getting dive into Git And GitHub i have to explain some basic terminologies like
+CVCS -Centralized Version Control System
+DVCS- Distributed Version Control System
+Like we known all Centrailized version control system or server it had all commits and update in a single respoitory
+we have to work in single repos and work in working copy. we need to be always connected to a network to perform any action
+since everything is centralized if the central server gets failed, you will lose the entire data.
+but in
+Distributed version control system system/server
+In DVCS every contributor has a local copy or clone of the main repos .it means everyone can maintains a local repos of their own
+which contains all the files & metadata in the main repos
+Git three stage architecture
+-------working directory
+----------------staging area 
+-----------------------Git Directory(Repos)(Dev or Feature)
+-----------------------------GitHub Directory(Master or Main)
+
+Some Basic Git Commands
+Firstly we have to config our sever to git
+	git config --global user.name "your username>"
+	git config --global user.email "<your email>"
+Then after we have to initialize the git 
+	git init
+Clone an existing Git Repository 
+	git clone <repository>
+add file/stage to git
+	git add <filenname>
+	git add .
+To add all files in local directory
+	git commit -m "commit message"
+To commit from local to staging are to git repos
+	git restore <filename>
+restored the file from being modified to tracked
+	git status 
+to check the status of your git repository
+	git branch
+to show the branches of your git repository 
+	git checkout <branchname>
+to checkout one branch to another branch
+	git checkout -b <branchname>
+to checkout the new branch to current branch
+To show the remote url
+	git remote -v
+add remote origin URL
+	git remote add origin <your remote giturl>
+remove remote origin ur 
+	git remote remove origin
+Fetch all the remote branches
+	git fetch
+***Push your local changes to remote branch***
+	git push origin <branch name>
+***Pull your remote changes to the local branch***
+	git pull origin <branchname>
+check your git commits and logs
+	git log
+For show all branches 
+	git branch
+To create a new branch 
+	git branch <branchname>	otherwise we can use (git checkout -b <branchname>)
+To delete a branch 
+	git branch -d <branchname>
+commands for branch merge
+	git merge <branchname>
+Git commands to resolve conflicts 
+	git log --merge 
+the commands helps to produce the list of commits that are causing the conflict
+	git diff
+as we all known it helps to identify the differences between the state repos or file
+	git reset --mixed 
+it is used to undo changes to the working directory and stagging area
+	git merge --abort 
+it helps in exiting the merge proccess and returning back to the state before the merging began
+**********************************************************************
+*******************cheery picking in git ****************************
+	git cherry-pick <commit id >
+cherry pick is the act of picking a commit from a branch and applying it to another it can be useful for undoing changes you can switch to the correct branch and cheery pick the commit to where it should belong
+
+**********************************************************************
+Git stash and pop
+the stash's measning is store something safely in a hidden place suppose youre implementing aa new feature for your product. your choice is on progress and suddenly a customer escalation comes because of this, you have to keep aside your
+new feature work for a few hours . you cannot commit your partial code and also cannot throw away ur changes
+so you need some temporary storage
+	git stash
+to stash an item 
+	git stash list 
+to see stashed items list
+	git stash apply stash@{<list number>}
+to clear the stash items
+	git stash clear
+popping an item from stash 
+	git stash pop
+to stash drop command is used to delete a stash from a queue
+	git stash drop
+*************************Git REBASE***********************
+rebasing is the process of moving or combinin a sequence of commits to a new base commit .Rebasing is most useful and easily visualized in the context of a feature branching workflow.
+The primary reason for rebasing is to maintain a linear project history.
+	git rebase <branchname>
+************************git squash*************************
+To Squash in git means to combine multiple commits into one you can do this at any point in time
+	git log --oneline
+it is display one line commit id and changes in a simple manner
+	git rebase -i HEAD -numberofcommitsid
+we want to squash the last commits 
+
+ 
+
+
